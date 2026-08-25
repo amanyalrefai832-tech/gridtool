@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Color Converter — HEX, RGB, HSL | GridTool</title>
+<meta name="description" content="Convert colors between HEX, RGB, and HSL live, with a color picker and preview swatch." />
+<meta property="og:title" content="Color Converter — HEX, RGB, HSL | GridTool" />
+<meta property="og:description" content="Convert colors between HEX, RGB, and HSL live, with a color picker and preview swatch." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='12' height='12' rx='2' fill='%230b2436' stroke='%23ffb648' stroke-width='2'/%3E%3Crect x='18' y='2' width='12' height='12' rx='2' fill='%230b2436' stroke='%23ffb648' stroke-width='2'/%3E%3Crect x='2' y='18' width='12' height='12' rx='2' fill='%230b2436' stroke='%23ffb648' stroke-width='2'/%3E%3Crect x='18' y='18' width='12' height='12' rx='2' fill='%230b2436' stroke='%23ffb648' stroke-width='2'/%3E%3C/svg%3E" />
+<link rel="canonical" href="https://amanyalrefai832-tech.github.io/gridtool/color-converter.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="index.html"><span class="mark"></span>Grid<span>Tool</span></a>
+    <nav id="navMenu" class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tools.html" aria-current="page">Tools</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="tools.html" class="nav-cta">Open tools</a>
+    </nav>
+    <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="navMenu">Menu</button>
+  </div>
+</header>
+
+<main class="container page">
+  <span class="eyebrow">Design tool</span>
+  <h1 style="font-size:clamp(1.9rem,3.6vw,2.6rem);">Color Converter</h1>
+  <p style="max-width:56ch; margin-bottom:2.2rem;">Edit the HEX, RGB, or color picker — all formats update together, including HSL.</p>
+
+  <div class="tool-shell">
+    <div class="panel">
+      <div id="colSwatch" class="swatch"></div>
+      <div class="field-row">
+        <div class="field">
+          <label for="colHex">HEX</label>
+          <input id="colHex" type="text" class="mono" />
+        </div>
+        <div class="field">
+          <label for="colPicker">Picker</label>
+          <input id="colPicker" type="color" />
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="colR">R</label><input id="colR" type="number" min="0" max="255" /></div>
+        <div class="field"><label for="colG">G</label><input id="colG" type="number" min="0" max="255" /></div>
+      </div>
+      <div class="field"><label for="colB">B</label><input id="colB" type="number" min="0" max="255" /></div>
+    </div>
+
+    <div class="panel">
+      <span class="eyebrow">Formats</span>
+      <div class="color-value-row" style="margin-top:1rem;">
+        <span class="mono" id="colHexOut"></span>
+        <button class="copy-btn" data-target="colHexOut" type="button">Copy</button>
+      </div>
+      <div class="color-value-row">
+        <span class="mono" id="colRgbOut"></span>
+        <button class="copy-btn" data-target="colRgbOut" type="button">Copy</button>
+      </div>
+      <div class="color-value-row">
+        <span class="mono" id="colHslOut"></span>
+        <button class="copy-btn" data-target="colHslOut" type="button">Copy</button>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="site-footer container">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html"><span class="mark"></span>Grid<span>Tool</span></a>
+      <p style="margin-top:1rem;">Free, fast utility tools that run entirely in your browser.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="unit-converter.html">Unit Converter</a></li>
+        <li><a href="word-counter.html">Word Counter</a></li>
+        <li><a href="password-generator.html">Password Generator</a></li>
+        <li><a href="date-calculator.html">Date Calculator</a></li>
+        <li><a href="case-converter.html">Case Converter</a></li>
+        <li><a href="color-converter.html">Color Converter</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="article-1.html">Word Count Guide</a></li>
+        <li><a href="article-2.html">Unit Conversions</a></li>
+        <li><a href="article-3.html">Strong Passwords</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> GridTool</span>
+    <span>Built as a static site &mdash; fast by default</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
